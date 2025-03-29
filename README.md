@@ -1,66 +1,6 @@
-**URL**: https://rama.cloudnotes.click
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-<!-- # Welcome to your Lovable project
-
-## Project info
 
 **URL**: https://rama.cloudnotes.click
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-# Simply visit the [Lovable Project](https://rama.cloudnotes.click) and start prompting.
-
-# Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
@@ -68,10 +8,38 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/08df9f58-a779-4b6e-83b4-440d3b577ebb) and click on Share -> Publish.
+This project is automatically deployed to AWS S3 using GitHub Actions. When you push changes to the `main` branch, the workflow will:
 
-## I want to use a custom domain - is that possible?
+1. Build the project
+2. Deploy the build to S3
+3. Invalidate CloudFront cache (if configured)
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/) -->
+### Setting up AWS deployment
+
+To set up the deployment workflow, you need to add the following secrets to your GitHub repository:
+
+- `AWS_ACCESS_KEY_ID`: Your AWS access key
+- `AWS_SECRET_ACCESS_KEY`: Your AWS secret key
+- `AWS_REGION`: The AWS region where your S3 bucket is located (e.g., `us-east-1`)
+- `S3_BUCKET`: The name of your S3 bucket
+- `CLOUDFRONT_DISTRIBUTION_ID` (optional): If you're using CloudFront, add your distribution ID
+
+### Configuring S3 for website hosting
+
+1. Create an S3 bucket with public access enabled
+2. Enable static website hosting in the bucket properties
+3. Add a bucket policy to allow public read access
+4. Configure CloudFront (optional but recommended for better performance and HTTPS)
+
+### Amazon Lambda for Contact Form
+
+The contact form in this website is configured to send emails using AWS Lambda and SES. You'll need to:
+
+1. Create a Lambda function to process form submissions
+2. Set up API Gateway to expose the Lambda function
+3. Configure CORS in API Gateway
+4. Update the API endpoint in the Contact component
+5. Set up SES for sending emails
+
