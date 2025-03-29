@@ -20,45 +20,46 @@ const Experience = () => {
   const experiences: ExperienceItem[] = [
     {
       id: "exp1",
-      role: "Senior Angular Developer",
-      company: "TechCorp Solutions",
-      period: "Jan 2022 - Present",
+      role: "Technical Lead",
+      company: "HCLTech",
+      period: "Oct 2021 - Present",
       description: [
-        "Led a team of 5 developers to rebuild the company's flagship product using Angular 15, resulting in a 40% improvement in performance.",
-        "Implemented state management with NgRx, reducing data fetching redundancy and improving user experience.",
-        "Created reusable UI components following the company's design system, which reduced development time by 25%.",
-        "Mentored junior developers through code reviews and pair programming sessions."
+        "As an Angular Developer at HCLTech, I have worked on diverse, high-impact projects across industries, delivering scalable and efficient web applications for major clients like Caterpillar Inc., Franklin Templeton, Amdocs, and AT&T.", 
+        "With a focus on front-end development, I have led and contributed to key initiatives, including upgrading frameworks, optimizing performance, and integrating advanced technologies.",
+        "Caterpillar Inc. (Minestar EDGE): Upgraded Angular framework, resolved performance issues, and improved code quality by integrating SonarQube and migrating pipelines to GitHub Actions.",
+        "Franklin Templeton: Built and maintained modern Angular 17 applications with a focus on dynamic content using Bloomreach CMS and optimized data handling via GraphQL.",
+        "Amdocs (ADEP Platform): Led the design and development of core features for a Data Engineering Platform, including advanced user management, metadata visualization, and error handling."
       ],
-      technologies: ["Angular 15", "TypeScript", "NgRx", "RxJS", "Jasmine", "Karma"],
-      companyUrl: "#"
+      technologies: ["Angular 14-19", "TypeScript", "NgRx", "RxJS", "Jasmine", "Karma", "RESTful APIs", "PostgreSQL", "Websockets"],
+      companyUrl: "https://www.hcltech.com/"
     },
     {
       id: "exp2",
-      role: "Frontend Developer",
-      company: "WebSoft Systems",
-      period: "Jun 2019 - Dec 2021",
+      role: "Senior Engineer",
+      company: "Tata Communications",
+      period: "Dec 2019 - Sept 2021",
       description: [
-        "Developed and maintained multiple Angular applications for enterprise clients.",
-        "Integrated REST APIs and implemented responsive designs using Angular Material.",
-        "Collaborated with UX designers to improve user interface and accessibility.",
-        "Participated in agile development processes, including daily stand-ups and sprint planning."
+        "Developed and maintained the frontend interface, delivering an intuitive and responsive user experience.",
+        "Built reusable components and integrated the application with backend APIs for real-time tracking of change requests.",
+        "Implemented role-based access controls (RBAC) to enforce secure access and approval workflows.",
+        "Optimized performance and ensured code quality through testing and continuous improvements."
       ],
-      technologies: ["Angular 9-12", "TypeScript", "Angular Material", "SCSS", "RESTful APIs"],
-      companyUrl: "#"
+      technologies: ["Angular 6-8", "TypeScript", "Angular Material", "SCSS", "RESTful APIs"],
+      companyUrl: "https://www.tatacommunications-ts.com/"
     },
     {
       id: "exp3",
-      role: "Junior Web Developer",
-      company: "Creative Digital Agency",
-      period: "Sep 2017 - May 2019",
+      role: "Senior Executive - Operations",
+      company: "Vodafone Idea Limited",
+      period: "Sep 2015 - Dec 2019",
       description: [
-        "Built responsive websites and web applications for various clients using Angular and other frontend technologies.",
-        "Worked closely with designers to translate UI/UX wireframes into functional components.",
-        "Optimized applications for maximum speed and scalability.",
-        "Troubleshot and debugged issues across different browsers and devices."
+        "As a Senior Executive in the Planning and Quality Department at Vodafone Idea, I was responsible for managing and enhancing circle-level KPI dashboards, driving continuous improvements month-over-month (MoM) and quarter-over-quarter (QoQ).",
+        "My role focused on optimizing network performance metrics and delivering actionable insights to support strategic planning and operational efficiency.",
+        "NARAD Application Development: Played a key role in developing NARAD (Network Analytics, Reporting, and Data Application)—a national award-winning platform for monitoring 2G network performance.",
+        "Automated report generation and data extraction by creating custom scripts using MML (Man-Machine Language) to interface with NSN BSCs, improving data accuracy and operational efficiency."
       ],
-      technologies: ["Angular 5-8", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
-      companyUrl: "#"
+      technologies: ["php", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
+      companyUrl: "https://www.myvi.in/"
     }
   ];
 
