@@ -31,7 +31,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-muted-foreground text-sm">
-              © {currentYear} John Doe. All rights reserved.
+              © {currentYear} Rama Subba Reddy. All rights reserved.
             </p>
           </div>
         </div>
