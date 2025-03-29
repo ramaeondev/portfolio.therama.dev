@@ -51,7 +51,7 @@ const About = () => {
                 Beyond coding, I enjoy sharing my knowledge through technical articles and community discussions. I'm constantly learning new technologies and exploring ways to improve my craft.
               </p>
               <p>
-                When I'm not in front of a computer, you’ll find me watching movies, catching up on TV shows, or enjoying a game of cricket.
+                When I'm not in front of a workstation, you’ll find me spending time with fammily, watching movies, catching up on TV shows, or enjoying a game of cricket.
               </p>
             </div>
           </div>
