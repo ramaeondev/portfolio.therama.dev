@@ -15,15 +15,13 @@ const Hero = () => {
         <div className="max-w-3xl animate-fade-in">
           <p className="text-accent font-mono mb-4">Hi, my name is</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-            <span className="text-foreground">John Doe</span>
+            <span className="text-foreground">Rama Subba Reddy</span>
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-muted-foreground">
             I build things with Angular
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-            I'm a software engineer specializing in building exceptional digital experiences.
-            Currently, I'm focused on building accessible, human-centered products using Angular and
-            modern web technologies.
+          I'm a software engineer passionate about creating exceptional digital experiences. Right now, I'm focused on building accessible, user-centered products with Angular and modern web technologies.
           </p>
           
           <div className="flex flex-wrap gap-4 mb-12">
