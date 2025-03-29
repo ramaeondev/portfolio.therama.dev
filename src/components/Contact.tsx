@@ -20,25 +20,56 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Replace this URL with your actual API Gateway endpoint
+      const apiEndpoint = "https://your-api-gateway-endpoint.amazonaws.com/prod/send-email";
+      
+      const response = await fetch(apiEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to: "ramaeon.dev@gmail.com", // The recipient email
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+      
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out, I'll get back to you soon.",
         duration: 5000,
       });
+      
+      // Reset form
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: ""
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleDownloadCV = () => {
