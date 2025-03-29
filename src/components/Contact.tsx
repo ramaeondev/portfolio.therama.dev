@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Download } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
@@ -42,6 +42,24 @@ const Contact = () => {
     }, 1500);
   };
 
+  const handleDownloadCV = () => {
+    const cvUrl = "https://personal-docs-rama.s3.ap-south-2.amazonaws.com/resume/Rama_Subba_Reddy_Vennapusa_April2025.docx";
+    
+    // Create an anchor element and trigger the download
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.setAttribute('download', 'Rama_Subba_Reddy_Vennapusa_Resume.docx');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast({
+      title: "Download started",
+      description: "Your CV download has started.",
+      duration: 3000,
+    });
+  };
+
   return (
     <section id="contact" className="py-16 md:py-24">
       <div className="section-container">
@@ -70,7 +88,15 @@ const Contact = () => {
             </div>
             
             <div className="flex gap-4">
-              <Button variant="outline" size="lg">Download CV</Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                onClick={handleDownloadCV}
+                className="flex items-center"
+              >
+                <Download className="mr-2" size={16} />
+                Download CV
+              </Button>
               <Button size="lg" className="bg-accent hover:bg-accent/90">Hire Me</Button>
             </div>
           </div>
