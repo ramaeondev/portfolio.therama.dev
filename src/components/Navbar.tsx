@@ -1,11 +1,13 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { toast } = useToast();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -30,6 +32,24 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleDownloadCV = () => {
+    const cvUrl = "https://personal-docs-rama.s3.ap-south-2.amazonaws.com/resume/Rama_Subba_Reddy_Vennapusa_April2025.docx";
+    
+    // Create an anchor element and trigger the download
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.setAttribute('download', 'Rama_Subba_Reddy_Vennapusa_Resume.docx');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast({
+      title: "Download started",
+      description: "Your CV download has started.",
+      duration: 3000,
+    });
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +71,13 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="default" size="sm" className="ml-4 bg-accent hover:bg-accent/90">
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="ml-4 bg-accent hover:bg-accent/90 flex items-center gap-2"
+                onClick={handleDownloadCV}
+              >
+                <Download size={16} />
                 Resume
               </Button>
             </div>
@@ -82,7 +108,13 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="default" size="sm" className="ml-3 mt-2 bg-accent hover:bg-accent/90">
+            <Button 
+              variant="default" 
+              size="sm" 
+              className="ml-3 mt-2 bg-accent hover:bg-accent/90 flex items-center gap-2"
+              onClick={handleDownloadCV}
+            >
+              <Download size={16} />
               Resume
             </Button>
           </div>
