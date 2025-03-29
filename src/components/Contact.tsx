@@ -57,15 +57,15 @@ const Contact = () => {
             <div className="space-y-4 mb-8">
               <div className="flex items-center text-muted-foreground">
                 <Mail className="mr-4 text-primary" size={20} />
-                <span>johndoe@example.com</span>
+                <span>ramaeon.dev@gmail.com</span>
               </div>
               <div className="flex items-center text-muted-foreground">
                 <Phone className="mr-4 text-primary" size={20} />
-                <span>+1 (123) 456-7890</span>
+                <span>+91 9848102324</span>
               </div>
               <div className="flex items-center text-muted-foreground">
                 <MapPin className="mr-4 text-primary" size={20} />
-                <span>San Francisco, CA</span>
+                <span>Bangalore, KA</span>
               </div>
             </div>
             
