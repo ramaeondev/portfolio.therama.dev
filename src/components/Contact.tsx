@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -60,6 +59,19 @@ const Contact = () => {
     });
   };
 
+  const handleHireMe = () => {
+    // Open email client with pre-filled email
+    const subject = encodeURIComponent("Job Opportunity");
+    const body = encodeURIComponent("Hello Rama,\n\nI'm interested in discussing a job opportunity with you.");
+    window.location.href = `mailto:ramaeon.dev@gmail.com?subject=${subject}&body=${body}`;
+    
+    toast({
+      title: "Opening email client",
+      description: "Let's discuss how we can work together!",
+      duration: 3000,
+    });
+  };
+
   return (
     <section id="contact" className="py-16 md:py-24">
       <div className="section-container">
@@ -97,7 +109,13 @@ const Contact = () => {
                 <Download className="mr-2" size={16} />
                 Download CV
               </Button>
-              <Button size="lg" className="bg-accent hover:bg-accent/90">Hire Me</Button>
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90"
+                onClick={handleHireMe}
+              >
+                Hire Me
+              </Button>
             </div>
           </div>
           
