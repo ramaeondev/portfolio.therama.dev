@@ -23,7 +23,7 @@ const Footer = () => {
           
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-6 mb-4">
-              <a href="https://github.com/ramasubbaiya" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
+              <a href="https://github.com/ramaeon" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
               <a 

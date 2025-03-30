@@ -1,8 +1,14 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Mail } from "lucide-react";
 
 const Hero = () => {
+  const handleEmailClick = () => {
+    const subject = encodeURIComponent("Contact from Website");
+    const body = encodeURIComponent("Hello Rama,\n\nI'd like to get in touch with you regarding...");
+    window.location.href = `mailto:ramaeon.dev@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -42,13 +48,15 @@ const Hero = () => {
           </div>
           
           <div className="flex gap-6 text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="https://github.com/ramaeon" className="hover:text-primary transition-colors" aria-label="GitHub">
               <Github size={24} />
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              <Linkedin size={24} />
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a 
+              href="#" 
+              onClick={handleEmailClick} 
+              className="hover:text-primary transition-colors"
+              aria-label="Email"
+            >
               <Mail size={24} />
             </a>
           </div>
