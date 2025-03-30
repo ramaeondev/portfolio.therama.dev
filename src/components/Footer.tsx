@@ -1,8 +1,14 @@
 
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  const handleEmailClick = () => {
+    const subject = encodeURIComponent("Contact from Website");
+    const body = encodeURIComponent("Hello Rama,\n\nI'd like to get in touch with you regarding...");
+    window.location.href = `mailto:ramaeon.dev@gmail.com?subject=${subject}&body=${body}`;
+  };
   
   return (
     <footer className="bg-background border-t border-muted">
@@ -17,16 +23,15 @@ const Footer = () => {
           
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-6 mb-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/ramasubbaiya" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="#" 
+                onClick={handleEmailClick} 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Email"
+              >
                 <Mail size={20} />
               </a>
             </div>
