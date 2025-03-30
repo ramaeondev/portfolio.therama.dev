@@ -25,10 +25,18 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-wrap gap-4 mb-12">
-            <Button size="lg" className="bg-accent hover:bg-accent/90">
+            <Button 
+              size="lg" 
+              className="bg-accent hover:bg-accent/90"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               See My Work
             </Button>
-            <Button size="lg" variant="outline">
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get In Touch
             </Button>
           </div>

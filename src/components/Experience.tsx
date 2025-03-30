@@ -1,8 +1,9 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Building2, ExternalLink } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ExperienceItem {
   id: string;
@@ -16,6 +17,7 @@ interface ExperienceItem {
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState("exp1");
+  const isMobile = useIsMobile();
   
   const experiences: ExperienceItem[] = [
     {
@@ -72,16 +74,16 @@ const Experience = () => {
           <CardContent className="p-0">
             <Tabs defaultValue="exp1" value={activeTab} onValueChange={setActiveTab} className="w-full">
               <div className="flex flex-col md:flex-row">
-                <TabsList className="h-auto md:h-auto md:flex-col justify-start p-0 md:w-64 md:border-r border-muted bg-muted/20">
+                <TabsList className={`h-auto md:h-auto ${isMobile ? "flex overflow-x-auto" : "md:flex-col justify-start"} p-0 ${isMobile ? "w-full" : "md:w-64"} md:border-r border-muted bg-muted/20`}>
                   {experiences.map((exp) => (
                     <TabsTrigger
                       key={exp.id}
                       value={exp.id}
-                      className="py-4 px-6 text-left w-full rounded-none data-[state=active]:bg-primary/10 data-[state=active]:border-l-2 data-[state=active]:border-l-primary text-foreground justify-start"
+                      className={`py-4 ${isMobile ? "px-3 flex-shrink-0" : "px-6"} text-left w-full rounded-none data-[state=active]:bg-primary/10 data-[state=active]:border-l-2 data-[state=active]:border-l-primary text-foreground justify-start`}
                     >
                       <div>
                         <p className="font-medium">{exp.company}</p>
-                        <p className="text-sm text-muted-foreground">{exp.role}</p>
+                        <p className={`text-sm text-muted-foreground ${isMobile ? "hidden" : ""}`}>{exp.role}</p>
                       </div>
                     </TabsTrigger>
                   ))}

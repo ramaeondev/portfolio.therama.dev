@@ -1,7 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Lock } from "lucide-react";
 
 interface Project {
   id: number;
@@ -138,19 +139,31 @@ const Projects = () => {
                   
                   <div className="flex gap-4">
                     {project.githubUrl && (
-                      <Button variant="outline" size="sm" asChild disabled={project.isgitHubUrlDisabled}>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                          <Github size={16} className="mr-2" /> Code
-                        </a>
-                      </Button>
+                      project.isgitHubUrlDisabled ? (
+                        <div className="flex items-center text-muted-foreground">
+                          <Lock size={16} className="mr-2" /> Private Repository
+                        </div>
+                      ) : (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <Github size={16} className="mr-2" /> Code
+                          </a>
+                        </Button>
+                      )
                     )}
                     
                     {project.liveUrl && (
-                      <Button size="sm" asChild disabled={project.isLiveUrlDisabled}>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                          <ExternalLink size={16} className="mr-2" /> Live Demo
-                        </a>
-                      </Button>
+                      project.isLiveUrlDisabled ? (
+                        <div className="flex items-center text-muted-foreground ml-4">
+                          <Lock size={16} className="mr-2" /> Internal Demo
+                        </div>
+                      ) : (
+                        <Button size="sm" asChild>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <ExternalLink size={16} className="mr-2" /> Live Demo
+                          </a>
+                        </Button>
+                      )
                     )}
                   </div>
                 </div>
@@ -183,25 +196,37 @@ const Projects = () => {
                   <CardFooter className="pt-2">
                     <div className="flex gap-4">
                       {project.githubUrl && (
-                        <a 
-                          href={project.githubUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          <Github size={20} />
-                        </a>
+                        project.isgitHubUrlDisabled ? (
+                          <span className="text-muted-foreground">
+                            <Lock size={20} />
+                          </span>
+                        ) : (
+                          <a 
+                            href={project.githubUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            <Github size={20} />
+                          </a>
+                        )
                       )}
                       
                       {project.liveUrl && (
-                        <a 
-                          href={project.liveUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          <ExternalLink size={20} />
-                        </a>
+                        project.isLiveUrlDisabled ? (
+                          <span className="text-muted-foreground">
+                            <Lock size={20} />
+                          </span>
+                        ) : (
+                          <a 
+                            href={project.liveUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            <ExternalLink size={20} />
+                          </a>
+                        )
                       )}
                     </div>
                   </CardFooter>
