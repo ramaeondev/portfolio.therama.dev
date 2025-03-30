@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Building2, ExternalLink } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ExperienceItem {
   id: string;
@@ -74,20 +75,40 @@ const Experience = () => {
           <CardContent className="p-0">
             <Tabs defaultValue="exp1" value={activeTab} onValueChange={setActiveTab} className="w-full">
               <div className="flex flex-col md:flex-row">
-                <TabsList className={`h-auto md:h-auto ${isMobile ? "flex overflow-x-auto" : "md:flex-col justify-start"} p-0 ${isMobile ? "w-full" : "md:w-64"} md:border-r border-muted bg-muted/20`}>
-                  {experiences.map((exp) => (
-                    <TabsTrigger
-                      key={exp.id}
-                      value={exp.id}
-                      className={`py-4 ${isMobile ? "px-3 flex-shrink-0" : "px-6"} text-left w-full rounded-none data-[state=active]:bg-primary/10 data-[state=active]:border-l-2 data-[state=active]:border-l-primary text-foreground justify-start`}
-                    >
-                      <div>
-                        <p className="font-medium">{exp.company}</p>
-                        <p className={`text-sm text-muted-foreground ${isMobile ? "hidden" : ""}`}>{exp.role}</p>
-                      </div>
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+                {isMobile ? (
+                  <ScrollArea className="w-full bg-muted/20">
+                    <TabsList className="flex h-auto justify-start p-0 w-full overflow-x-auto bg-transparent">
+                      {experiences.map((exp) => (
+                        <TabsTrigger
+                          key={exp.id}
+                          value={exp.id}
+                          className="py-4 px-4 flex-shrink-0 text-left rounded-none data-[state=active]:bg-primary/10 data-[state=active]:border-b-2 data-[state=active]:border-b-primary text-foreground justify-start"
+                        >
+                          <div>
+                            <p className="font-medium">{exp.company}</p>
+                          </div>
+                        </TabsTrigger>
+                      ))}
+                    </TabsList>
+                  </ScrollArea>
+                ) : (
+                  <TabsList className="h-auto md:flex-col justify-start p-0 md:w-64 md:border-r border-muted bg-muted/20">
+                    {experiences.map((exp) => (
+                      <TabsTrigger
+                        key={exp.id}
+                        value={exp.id}
+                        className="py-4 px-6 text-left w-full rounded-none data-[state=active]:bg-primary/10 data-[state=active]:border-l-2 data-[state=active]:border-l-primary text-foreground justify-start"
+                      >
+                        <div>
+                          <p className="font-medium">{exp.company}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {exp.role}
+                          </p>
+                        </div>
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                )}
                 
                 <div className="flex-1 p-0">
                   {experiences.map((exp) => (
