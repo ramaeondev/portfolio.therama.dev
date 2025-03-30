@@ -48,7 +48,13 @@ const Hero = () => {
           </div>
           
           <div className="flex gap-6 text-muted-foreground">
-            <a href="https://github.com/ramaeon" className="hover:text-primary transition-colors" aria-label="GitHub">
+            <a 
+              href="https://github.com/ramaeon" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-primary transition-colors" 
+              aria-label="GitHub"
+            >
               <Github size={24} />
             </a>
             <a 
