@@ -26,14 +26,12 @@ const Contact = () => {
     
     try {
       // Replace this URL with your actual API Gateway endpoint
-      const apiEndpoint = "https://gyyhnbzekafnvxflhlni.supabase.co/functions/v1/send-contact-email";
+      const apiEndpoint = "https://api.therama.dev/functions/v1/send-contact-email";
       
       const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5eWhuYnpla2FmbnZ4ZmxobG5pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM4NTA0NTksImV4cCI6MjA1OTQyNjQ1OX0.J96DGREUC2NXn1WGC3wkhpr0JsCnBqjVHiQWq4yO3FI`,
-
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: formData.name,
