@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Portfolio website for myself, Therama.",
   "project_id": "32f45f2c-2742-46d2-816e-b1337447a362",
+  "status": "Ready for Production",
   "author": "Ramaeon",
   "license": "MIT",
   "update_project_version": "https://api.therama.dev/functions/v1/update-project-version",
