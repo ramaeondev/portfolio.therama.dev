@@ -1,8 +1,28 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "portfolilio.therama.dev",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Portfolio website for myself, Therama.",
+  "project_id": "32f45f2c-2742-46d2-816e-b1337447a362",
+  "author": "Ramaeon",
+  "license": "MIT",
+  "homepage": "https://portfolio.therama.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramaeondev/portfolio.therama.dev"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "therama"
+  ],
+  "technology": [
+    "vite",
+    "react",
+    "tailwindcss",
+    "typescript"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
