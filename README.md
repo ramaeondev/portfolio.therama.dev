@@ -1,5 +1,13 @@
+# Portfolio Website
 
-**URL**: https://rama.cloudnotes.click
+**URL**: https://portfolio.therama.dev
+
+## Overview
+
+Personal portfolio website showcasing my work as a developer. Built with modern web technologies and deployed on AWS infrastructure.
+
+## Tech Stack
+
 This project is built with:
 
 - Vite
@@ -7,6 +15,44 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- AWS account (for deployment)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ramaeondev/portfolio.therama.dev
+cd portfolio.therama.dev
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+### Development
+
+Run the development server:
+```bash
+npm run dev
+```
+
+Build for production:
+```bash
+npm run build
+```
+
+Preview production build:
+```bash
+npm run preview
+```
 
 ## Deployment
 
@@ -42,4 +88,36 @@ The contact form in this website is configured to send emails using AWS Lambda a
 3. Configure CORS in API Gateway
 4. Update the API endpoint in the Contact component
 5. Set up SES for sending emails
+
+## Project Structure
+
+```
+portfolio.therama.dev/
+├── public/           # Static assets
+├── src/             # Source code
+│   ├── components/  # React components
+│   ├── pages/       # Page components
+│   ├── styles/      # Global styles
+│   └── utils/       # Utility functions
+├── index.html       # Entry HTML file
+└── vite.config.ts   # Vite configuration
+```
+
+## Features
+
+- Responsive design
+- Dark/Light mode
+- Project showcase
+- Contact form with AWS Lambda integration
+- Blog section
+- Performance optimized
+- SEO friendly
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+Ramaeon - [Portfolio](https://portfolio.therama.dev)
 
