@@ -22,10 +22,21 @@ const Experience = () => {
   
   const experiences: ExperienceItem[] = [
     {
+      id: "exp5",
+      role: "Technical Lead",
+      company: "Harman International",
+      period: "May 2025 - Present",
+      description: [
+       "As a Technical Lead at Harman International, I am responsible for leading the development of a cutting-edge web application for the automotive industry, focusing on enhancing user experience and performance.",
+      ],
+      technologies: ["Angular"],
+      companyUrl: "https://www.harman.com/"
+    },
+    {
       id: "exp1",
       role: "Technical Lead",
       company: "HCLTech",
-      period: "Oct 2021 - Present",
+      period: "Oct 2021 - Apr 2025",
       description: [
         "As an Angular Developer at HCLTech, I have worked on diverse, high-impact projects across industries, delivering scalable and efficient web applications for major clients like Caterpillar Inc., Franklin Templeton, Amdocs, and AT&T.", 
         "With a focus on front-end development, I have led and contributed to key initiatives, including upgrading frameworks, optimizing performance, and integrating advanced technologies.",
@@ -63,7 +74,21 @@ const Experience = () => {
       ],
       technologies: ["php", "JavaScript", "HTML5", "CSS3", "Bootstrap"],
       companyUrl: "https://www.myvi.in/"
-    }
+    },
+    {
+      id: "exp4",
+      role: "Network Engineer",
+      company: "Genius Consultancy",
+      period: "May 2013 - Sep 2015",
+      description: [
+        "Worked as a Network Engineer at IDEA Cellular Ltd in the RF Planning and Optimization team, focusing on 2G/3G network optimization and performance improvement.",
+        "Performed daily KPI analysis, monitored call drop sectors, and optimized 2G/3G RAN networks. Analyzed coverage, handovers, interference, and resolved RF issues to maintain KPIs.", 
+        "Led a team managing customer complaints, coordinated with field engineers, and provided permanent resolutions. Delivered TRAI regulatory reports and suggested site shifts, repeaters, and IBS for high-priority complaints. Conducted cluster optimization, network planning, and ensured performance improvements through cross-functional collaboration." ,
+        "Initiated a live network issue portal to reduce customer complaints and provided planning inputs for network budgeting."
+      ],
+      technologies: ["KPI Monitoring", "RF Optimization", "Regulatory Reporting", "Network Planning", "MML"],
+      companyUrl: "https://www.geniusconsultant.com/"
+    },
   ];
 
   return (

@@ -38,7 +38,7 @@ const Contact = () => {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to: "ramaeon.dev@gmail.com",
+          to: "rama@therama.dev",
         }),
       });
       
@@ -94,7 +94,7 @@ const Contact = () => {
     // Open email client with pre-filled email
     const subject = encodeURIComponent("Job Opportunity");
     const body = encodeURIComponent("Hello Rama,\n\nI'm interested in discussing a job opportunity with you.");
-    window.location.href = `mailto:ramaeon.dev@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:rama@therama.dev?subject=${subject}&body=${body}`;
     
     toast({
       title: "Opening email client",
@@ -118,11 +118,11 @@ const Contact = () => {
             <div className="space-y-4 mb-8">
               <div className="flex items-center text-muted-foreground">
                 <Mail className="mr-4 text-primary" size={20} />
-                <span>ramaeon.dev@gmail.com</span>
+                <span>rama@therama.dev</span>
               </div>
               <div className="flex items-center text-muted-foreground">
                 <Phone className="mr-4 text-primary" size={20} />
-                <span>+91 9848102324</span>
+                <span>+91 9440158133</span>
               </div>
               <div className="flex items-center text-muted-foreground">
                 <MapPin className="mr-4 text-primary" size={20} />
@@ -141,7 +141,7 @@ const Contact = () => {
                 Download CV
               </Button>
               <Button 
-                size="lg" 
+                size="lg" disabled
                 className="bg-accent hover:bg-accent/90"
                 onClick={handleHireMe}
               >

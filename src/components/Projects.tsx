@@ -20,6 +20,18 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
+      id: 6,
+      title: "New Project, Omnissa",
+      description: `Will be updated soon`,
+      image: "https://www.dinghui.org/wp-content/uploads/2024/10/Omnissa-scaled-1.jpg",
+      technologies: ["Angular 17", "TypeScript", "NgRx", ],
+      githubUrl: "#",
+      isgitHubUrlDisabled: true,
+      isLiveUrlDisabled: true,
+      liveUrl: "#",
+      featured: true
+    },
+    {
       id: 1,
       title: "Minestar EDGE, Caterpiller Inc ",
       description: `As an Angular Developer for the Minestar Edge application at Caterpillar Inc., I contributed to a sophisticated, real-time platform that monitors KPI metrics for heavy machinery across mining and construction sites worldwide.

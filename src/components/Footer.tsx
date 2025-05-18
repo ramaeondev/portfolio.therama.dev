@@ -7,7 +7,7 @@ const Footer = () => {
   const handleEmailClick = () => {
     const subject = encodeURIComponent("Contact from Website");
     const body = encodeURIComponent("Hello Rama,\n\nI'd like to get in touch with you regarding...");
-    window.location.href = `mailto:ramaeon.dev@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:rama@therama.dev?subject=${subject}&body=${body}`;
   };
   
   return (
