@@ -17,7 +17,7 @@ interface ExperienceItem {
 }
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState("exp1");
+  const [activeTab, setActiveTab] = useState("exp5");
   const isMobile = useIsMobile();
   
   const experiences: ExperienceItem[] = [
@@ -28,8 +28,9 @@ const Experience = () => {
       period: "May 2025 - Present",
       description: [
        "As a Technical Lead at Harman International, I am responsible for leading the development of a cutting-edge web application for the automotive industry, focusing on enhancing user experience and performance.",
+       "Client: Omnissa — worked on the large-scale Workspace ONE application, contributing to architecture, integrations, and performance optimizations.",
       ],
-      technologies: ["Angular"],
+      technologies: ["Angular", "Workspace ONE"],
       companyUrl: "https://www.harman.com/"
     },
     {
@@ -98,7 +99,7 @@ const Experience = () => {
         
         <Card className="mt-8 overflow-hidden card-hover border-muted bg-card/50">
           <CardContent className="p-0">
-            <Tabs defaultValue="exp1" value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <Tabs defaultValue="exp5" value={activeTab} onValueChange={setActiveTab} className="w-full">
               <div className="flex flex-col md:flex-row">
                 {isMobile ? (
                   <ScrollArea className="w-full bg-muted/20">

@@ -21,10 +21,10 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 6,
-      title: "New Project, Omnissa",
-      description: `Will be updated soon`,
+      title: "Workspace ONE, Omnissa",
+      description: `Omnissa Workspace ONE is a comprehensive digital workplace solution designed to manage, deploy, and secure applications on any device from a unified platform. It is widely used for integrating access control, application management, and unified endpoint management (UEM) to support modern organizational IT needs and security compliance.`,
       image: "https://www.dinghui.org/wp-content/uploads/2024/10/Omnissa-scaled-1.jpg",
-      technologies: ["Angular 17", "TypeScript", "NgRx", ],
+      technologies: ["Angular 17", "TypeScript" ],
       githubUrl: "#",
       isgitHubUrlDisabled: true,
       isLiveUrlDisabled: true,
