@@ -25,7 +25,7 @@ const Footer = () => {
     }
 
     if (!links || !Array.isArray(links) || links.length === 0) {
-      // fallback to current static links
+      // fallback to static links (manually added)
       return (
         <>
           <a
@@ -34,16 +34,42 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
             aria-label="GitHub"
+            title="GitHub"
           >
             <Github size={20} />
           </a>
+
           <a
-            href="#"
-            onClick={handleEmailClick}
+            href="https://twitter.com/ramaeon"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="Email"
+            aria-label="Twitter"
+            title="Twitter"
           >
-            <Mail size={20} />
+            <Twitter size={20} />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ramaeon/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <Linkedin size={20} />
+          </a>
+
+          <a
+            href="https://www.npmjs.com/~ramaeon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center"
+            aria-label="npm"
+            title="npm"
+          >
+            <span className="inline-flex items-center justify-center rounded px-2 py-1 text-xs font-semibold bg-muted text-foreground">npm</span>
           </a>
         </>
       );
