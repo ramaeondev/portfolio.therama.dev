@@ -23,15 +23,6 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          
-      - name: Clean install dependencies
-        run: |
-            rm -rf node_modules package-lock.json
-            npm cache clean --force
-            npm install
-        
-      - name: Build
-        run: npm run build
         
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -39,16 +30,18 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_GLOBAL }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_GLOBAL }}
           aws-region: ${{ secrets.AWS_REGION }}
-          
-      - name: Deploy to S3
-        run: aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }} --delete
-        
-      - name: Invalidate CloudFront cache
+            
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/*"
-      
+          npm install --global vercel@latest
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+          
       - name: Log and Update Deployment to Supabase DB
         if: always()
         uses: ramaeondev/therama.dev/.github/actions/log-and-update-deployment@master
