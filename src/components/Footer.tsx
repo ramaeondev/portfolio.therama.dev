@@ -96,7 +96,7 @@ const Footer = () => {
       return <span className="text-sm">{link.display_name ?? platform}</span>;
     };
 
-    return links.map((link) => {
+    const rendered = links.map((link) => {
       const key = link.$id ?? link.platform ?? link.url;
       const href = link.url ?? '#';
       const label = link.display_name ?? link.platform ?? href;
@@ -116,6 +116,24 @@ const Footer = () => {
         </a>
       );
     });
+
+    // Ensure there's always a contact email link (manual) if API doesn't provide one
+    const hasEmail = links.some((l: any) => (/mail|email|mailto/i).test(l.platform || '') || (l.url || '').startsWith('mailto:'));
+
+    if (!hasEmail) {
+      rendered.push(
+        <a key="manual-email"
+          href={`mailto:rama@therama.dev`}
+          className="text-muted-foreground hover:text-primary transition-colors"
+          aria-label="Email"
+          title="Email"
+        >
+          <Mail size={20} />
+        </a>
+      );
+    }
+
+    return rendered;
   };
   
   return (
