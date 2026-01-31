@@ -24,10 +24,10 @@ const Experience = () => {
     {
       id: "exp5",
       role: "Technical Lead",
-      company: "Harman International",
+      company: "Harman International (Wipro)",
       period: "May 2025 - Present",
       description: [
-       "As a Technical Lead at Harman International, I am responsible for leading the development of a cutting-edge web application for the automotive industry, focusing on enhancing user experience and performance.",
+       "As a Technical Lead at Harman International (Wipro), I am responsible for leading the development of a cutting-edge web application for the automotive industry, focusing on enhancing user experience and performance.",
        "Client: Omnissa — worked on the large-scale Workspace ONE application, contributing to architecture, integrations, and performance optimizations.",
       ],
       technologies: ["Angular", "Workspace ONE"],
