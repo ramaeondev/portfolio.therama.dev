@@ -11,7 +11,7 @@ const Footer = () => {
     window.location.href = `mailto:rama@therama.dev?subject=${subject}&body=${body}`;
   };
 
-  // load social links from Appwrite
+  // load social links from the therama.dev Supabase backend (static schema)
   const { links, loading } = useSocialLinks();
 
   const renderLinks = () => {

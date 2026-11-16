@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getSocialLinks } from '../lib/appwriteClient';
+import { getSocialLinks } from '../lib/staticApi';
 
 export type SocialLink = {
   $id?: string;
